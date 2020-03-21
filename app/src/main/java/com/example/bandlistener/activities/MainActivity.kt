@@ -1,4 +1,4 @@
-package com.example.bandlistener
+package com.example.bandlistener.activities
 
 import android.app.Notification
 import android.app.NotificationManager
@@ -14,6 +14,10 @@ import android.support.v7.widget.DefaultItemAnimator
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.Toolbar
+import com.example.bandlistener.R
+import com.example.bandlistener.adapters.NavigationDrawerAdapter
+import com.example.bandlistener.fragments.MainScreenFragment
+import com.example.bandlistener.fragments.SongPlayingFragment
 
 
 class MainActivity : AppCompatActivity() {
@@ -57,7 +61,16 @@ class MainActivity : AppCompatActivity() {
 
         toggle.syncState()
 
+        val mainScreenFragment = MainScreenFragment()
 
+        this.supportFragmentManager
+            .beginTransaction()
+            .add(R.id.details_fragment, mainScreenFragment, "MainScreenFragment")
+            .commit()
+
+        var _navigationAdapter = NavigationDrawerAdapter(navigationDrawerIconsList,
+            images_for_navdrawer, this)
+        _navigationAdapter.notifyDataSetChanged()
 
         val navigation_recycler_view = findViewById<RecyclerView>(R.id.navigation_recycler_view)
         navigation_recycler_view.layoutManager = LinearLayoutManager(this)
@@ -78,6 +91,26 @@ class MainActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
+        try {
+            Statified.notificationManager?.cancel(1978)
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+    }
+
+    override fun onStop() {
+        super.onStop()
+        try {
+            if (SongPlayingFragment.Statified.mediaPlayer?.isPlaying as Boolean) {
+                Statified.notificationManager?.notify(1978, trackNotificationBuilder)
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
         try {
             Statified.notificationManager?.cancel(1978)
         } catch (e: Exception) {

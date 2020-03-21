@@ -30,7 +30,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="1dp"
-            android:text="KrishnaGanesh.S.R ,(B.E.CSE), "
+            android:text="V L, "
             android:textAlignment="center"
             android:textSize="25sp"
             android:gravity="center_horizontal" />
@@ -39,7 +39,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="12dp"
-            android:text="St.Joseph College Of Engineering,Chennai"
+            android:text="Sudent at the Uzhgorod National University"
             android:textAlignment="center"
             android:textSize="25sp"
             android:gravity="center_horizontal" />
@@ -48,7 +48,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="12dp"
-            android:text="Contact Us:"
+            android:text="Contact Me:"
             android:textAlignment="center"
             android:textSize="25sp"
             android:gravity="center_horizontal" />
@@ -67,7 +67,7 @@
             android:id="@+id/textAboutVersion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="App Version: 4.0"
+            android:text="App Version: 0.12"
             android:textAlignment="center"
             android:textSize="20sp"
             android:gravity="center_horizontal" />
