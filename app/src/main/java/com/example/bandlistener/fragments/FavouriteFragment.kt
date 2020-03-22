@@ -18,6 +18,8 @@ import android.widget.RelativeLayout
 import android.widget.TextView
 import com.example.bandlistener.R
 import com.example.bandlistener.Songs
+import com.example.bandlistener.adapters.FavouriteAdapter
+import com.example.bandlistener.databases.EchoDatabase
 
 class FavouriteFragment : Fragment() {
 
