@@ -12,10 +12,6 @@ import android.view.*
 import android.widget.ImageButton
 import android.widget.RelativeLayout
 import android.widget.TextView
-import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.DefaultItemAnimator
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.bandlistener.R
 import com.example.bandlistener.Songs
 import com.example.bandlistener.adapters.MainScreenAdapter
